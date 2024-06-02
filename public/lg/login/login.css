@@ -1,0 +1,225 @@
+/* Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:wght@300;400&display=swap');
+
+*, *::before, *::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, 
+input{
+  font-family: 'Nuninto', sans-serif;
+}
+
+main{
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 2rem;
+  background-color: #E1DFDF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.box{
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  height: 640px;
+  background-color: #ffff;
+  border-radius: 2rem;
+  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+  overflow: hidden;
+}
+
+.inner-box{
+  position: absolute;
+  width: calc(100% - 4.1rem);
+  height: calc(100% - 4.1rem);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.forms-wrap{
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transition: .5s ease-in-out;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.carousel{
+  position: absolute;
+  height: 116%;
+  width: 60%;
+  left: 55%;
+  top: -2rem;
+  transition: .5s ease-in-out;
+  background-image: url(../img/Rectangle\ 9.png), url(../img/Frame\ 25.png);
+  background-repeat: no-repeat;
+  background-position: center, center;
+  background-size: cover, center;
+}
+
+form{
+  max-width: 260px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  transition: opacity 0.02s 0.3s;
+}
+
+form.sign-up-form{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 27px;
+  margin-right: 0.3rem;
+}
+
+.heading {
+  margin-top: 2rem;
+}
+
+.logo h3{
+  font-size: 1.1rem;
+  margin-top: -9px;
+  letter-spacing: -0.5px;
+  color: #151111;
+}
+
+.heading h2{
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #63C4AB;
+}
+
+.heading h6{
+  font-weight: 400;
+  font-size: .75rem;
+  display: inline;
+}
+
+.toggle{
+  color: #151111;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.toggle:hover{
+  color: #8371fd;
+}
+
+
+.input-wrap{
+  position: relative;
+  height: 37px;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.input-field{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #E1DFDF;
+  outline: none;
+  border: none;
+  border-radius: .5rem;
+  padding: .4rem;
+  font-size: .95rem;
+  color: #151111;
+}
+
+label {
+ display: none;
+}
+
+.sign-btn{
+  display: inline-block;
+  width: 100%;
+  height: 43px;
+  background-color: #63C4AB;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  text-decoration: underline;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: .9rem;
+  margin-bottom: 2rem;
+  transition: .3s;
+}
+
+.sign-btn:hover{
+  background-color: #8371fd;
+}
+
+.text{
+  font-size: 0.8rem;
+  margin-top: -1.6rem;
+  margin-bottom: 2rem;
+}
+
+.text a {
+  color: #151111;
+  transition: 0.3s;
+}
+
+.text a:hover{
+  color: #8371fd;
+}
+
+.to-signup {
+  text-align: center;
+}
+
+.to-signup h6{
+  font-weight: 400;
+  font-size: .75rem;
+  display: inline;
+}
+
+main.sign-up-mode form.sign-in-form{
+  opacity: 0;
+  pointer-events: none;
+}
+
+main.sign-up-mode form.sign-up-form{
+  opacity: 1;
+  pointer-events: all;
+}
+
+main.sign-up-mode .forms-wrap{
+  left: 55%;
+  padding-left: -1rem;
+  padding-right: 3rem;
+}
+
+main.sign-up-mode .carousel{
+  left: -15%;
+}
