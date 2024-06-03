@@ -6,6 +6,7 @@
   <!-- Font awesome -->
   <link rel="stylesheet" href="{{ asset('lg/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('lg/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <title>Mediacl+</title>
 </head>
@@ -98,8 +99,8 @@
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium necessitatibus aliquid dolor, ad facere a illum numquam voluptates. Exercitationem eos qui doloribus repudiandae esse officia vitae rerum. Enim, at ut.</p>
     </section> -->
   <script src="{{ asset('lg/script.js') }}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  @if($message = Session::get('succes'))
+  
+  @if($message = Session::get('Success'))
         <script>
             Swal.fire('{{ $message }}');
         </script>
