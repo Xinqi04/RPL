@@ -1,7 +1,13 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\JanjiRsController;
+use App\Http\Controllers\LaboratoriumController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PasienController;
+use App\Http\Controllers\RadiologiController;
+use App\Http\Controllers\RekamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +34,14 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::get('/register',[LoginController::class,'register'])->name('register');
 Route::post('/register-proses',[LoginController::class,'register_proses'])->name('register-proses');
+
+
+Route::get('/rekam-medis', [RekamController::class,'index'])->name('rekam-medis');
+Route::get('/jadwal-dokter', [JadwalController::class, 'index'])->name('jadwal-dokter');
+Route::get('/registrasi-pasien', [PasienController::class, 'index'])->name('registrasi-pasien');
+Route::get('/registrasi-janji-rs', [JanjiRsController::class, 'index'])->name('registrasi-janji-rs');
+Route::get('/registrasi-labo', [LaboratoriumController::class, 'index'])->name('registrasi-labo');
+Route::get('/registrasi-radio', [RadiologiController::class, 'index'])->name('registrasi-radio');
 
 // Route::group(['prefix'=> 'admin', 'middleware'=> ['auth'], 'as' => 'admin'], function () {
 //   Route::get('/admin',[HomeController::class,'index'])->name('index');
