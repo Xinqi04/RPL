@@ -46,12 +46,12 @@
                      <div class="caret"></div>
                  </div>
                  <ul class="menu">
-                     <li><a href="">Cardiologist</a></li>
-                     <li><a href="">Dermatologist</a></li>
-                     <li><a href="">Neurologist</a></li>
-                     <li><a href="">Orthopedic</a></li>
-                     <li><a href="">Pediatrician</a></li>
-                     <li><a href="">Psychiatrist</a></li>
+                     <li><a href="" data-spesialis="Cardiologist" >Cardiologist</a></li>
+                     <li><a href="" data-spesialis="Dermatologist" >Dermatologist</a></li>
+                     <li><a href="" data-spesialis="Neurologist" >Neurologist</a></li>
+                     <li><a href="" data-spesialis="Orthopedic" >Orthopedic</a></li>
+                     <li><a href="" data-spesialis="Pediatrician" >Pediatrician</a></li>
+                     <li><a href="" data-spesialis="Psychiatrist" >Psychiatrist</a></li>
                  </ul>
              </div>
          </div>
@@ -65,7 +65,7 @@
                      
                  </div>
                  <ul class="menu">
-                     <li><a href="">Dr. A</a></li>
+                     <li><a href="">Dr. Ad</a></li>
                      <li><a href="">Dr. B</a></li>
                      <li><a href="">Dr. C</a></li>
                      <li><a href="">Dr. D</a></li>
