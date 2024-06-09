@@ -58,6 +58,7 @@
                           <td>{{ $d->name }}</td>
                           <td>{{ $d->email }}</td>
                           <td>
+                            <a href="{{ route('admin.detail',['id' => $d->id]) }}" class="btn btn-primary"><i class="fas fa-eye"></i>Detail</a>
                             <a href="{{ route('admin.edit',['id' => $d->id]) }}" class="btn btn-primary"><i class="fas fa-pen"></i>Edit</a>
                             <a data-toggle="modal" data-target="#modal-hapus-{{ $d->id }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Hapus</a>
                           </td>

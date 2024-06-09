@@ -48,6 +48,12 @@ class HomeController extends Controller
         return view('edit',compact('user'));
     }
 
+    public function detail(Request $request, $id){
+        $user = User::find($id);
+
+        return view('detail',compact('user'));
+    }
+
     public function update(Request $request, $id){
         $validator = Validator::make($request->all(), [
             'nama' => 'required',

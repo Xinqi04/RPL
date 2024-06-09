@@ -161,6 +161,6 @@
     @endif
 
       
-  @endsession)
+  @endsession
 </body>
 </html>
