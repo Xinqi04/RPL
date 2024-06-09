@@ -38,11 +38,15 @@ Route::post('/register-proses',[LoginController::class,'register_proses'])->name
 
 Route::get('/rekam-medis', [RekamController::class,'index'])->name('rekam-medis');
 Route::get('/jadwal-dokter', [JadwalController::class, 'index'])->name('jadwal-dokter');
+<<<<<<< HEAD
 
 Route::get('/registrasi-pasien', [PasienController::class, 'registrasi_pasien'])->name('registrasi-pasien');
 Route::post('/registrasi-pasien-proses',[PasienController::class,'registrasi_pasien_proses'])->name('registrasi-pasien-proses');
 
 
+=======
+Route::get('/registrasi-pasien', [PasienController::class, 'index'])->name('registrasi-pasien');
+>>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
 Route::get('/registrasi-janji-rs', [JanjiRsController::class, 'index'])->name('registrasi-janji-rs');
 Route::get('/registrasi-labo', [LaboratoriumController::class, 'index'])->name('registrasi-labo');
 Route::get('/registrasi-radio', [RadiologiController::class, 'index'])->name('registrasi-radio');

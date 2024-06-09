@@ -41,17 +41,30 @@
                <p>pilih spesialis dokter</p>
                  <div class="select">
                      <span class="selected">
+<<<<<<< HEAD
                         <input name="spesialis" class="search" placeholder="Pilih Spesialis Dokter">
+=======
+                        <input type="text" class="search" placeholder="Pilih Spesialis Dokter">
+>>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                      </span>
                      <div class="caret"></div>
                  </div>
                  <ul class="menu">
+<<<<<<< HEAD
                      <li><a href="" data-spesialis="Cardiologist" >Cardiologist</a></li>
                      <li><a href="" data-spesialis="Dermatologist" >Dermatologist</a></li>
                      <li><a href="" data-spesialis="Neurologist" >Neurologist</a></li>
                      <li><a href="" data-spesialis="Orthopedic" >Orthopedic</a></li>
                      <li><a href="" data-spesialis="Pediatrician" >Pediatrician</a></li>
                      <li><a href="" data-spesialis="Psychiatrist" >Psychiatrist</a></li>
+=======
+                     <li><a href="">Cardiologist</a></li>
+                     <li><a href="">Dermatologist</a></li>
+                     <li><a href="">Neurologist</a></li>
+                     <li><a href="">Orthopedic</a></li>
+                     <li><a href="">Pediatrician</a></li>
+                     <li><a href="">Psychiatrist</a></li>
+>>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                  </ul>
              </div>
          </div>
@@ -65,7 +78,11 @@
                      
                  </div>
                  <ul class="menu">
+<<<<<<< HEAD
                      <li><a href="">Dr. Ad</a></li>
+=======
+                     <li><a href="">Dr. A</a></li>
+>>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                      <li><a href="">Dr. B</a></li>
                      <li><a href="">Dr. C</a></li>
                      <li><a href="">Dr. D</a></li>
@@ -73,7 +90,11 @@
                  </ul>
              </div>
          </div>
+<<<<<<< HEAD
          <input name="nama_dokter" type="submit" value="Lihat Jadwal" class="button">
+=======
+         <input type="submit" value="Lihat Jadwal" class="button">
+>>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
      </div>
 
       <div class="show-form">
@@ -88,19 +109,29 @@
                   <thead>
                      <tr>
                         <td>senin</td>
+<<<<<<< HEAD
                         <td>selasa</td>
+=======
+                        <td>slasa</td>
+>>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                         <td>rabu</td>
                         <td>kamis</td>
                         <td>jumat</td>
                      </tr>
                   </thead>
                   <tbody>
+<<<<<<< HEAD
                      @foreach ($jadwal as $d)
                      <tr>
                         <td>08.00</td>
                         <td>{{ $d->jam_mulai }}</td>
                      </tr>
                      @endforeach
+=======
+                     <tr>
+                        <td>08.00</td>
+                     </tr>
+>>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                   </tbody>
                </table>
             </div>
