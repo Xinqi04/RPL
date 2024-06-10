@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Validator;
 use App\Models\Pasien;
 use Illuminate\Support\Facades\Auth;
@@ -12,10 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class PasienController extends Controller
 {
-    // public function index () 
-    // {
-    //     return view('registrasi-pasien');
-    // }
 
     public function registrasi_pasien(){
         return view('registrasi-pasien');
@@ -54,13 +49,4 @@ class PasienController extends Controller
         return view('laman-masuk');
     }
 
-=======
-
-class PasienController extends Controller
-{
-    public function index () 
-    {
-        return view('registrasi-pasien');
-    }
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
 }

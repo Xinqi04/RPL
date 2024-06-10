@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ asset('lg/style.css') }}">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <title>Mediacal+</title>
+  <title>Medical+</title>
 </head>
 <body>
 
@@ -41,30 +41,17 @@
                <p>pilih spesialis dokter</p>
                  <div class="select">
                      <span class="selected">
-<<<<<<< HEAD
-                        <input name="spesialis" class="search" placeholder="Pilih Spesialis Dokter">
-=======
-                        <input type="text" class="search" placeholder="Pilih Spesialis Dokter">
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
+                        <input name="spesialis" class="search spesialis-input" placeholder="Pilih Spesialis Dokter">
                      </span>
                      <div class="caret"></div>
                  </div>
                  <ul class="menu">
-<<<<<<< HEAD
-                     <li><a href="" data-spesialis="Cardiologist" >Cardiologist</a></li>
-                     <li><a href="" data-spesialis="Dermatologist" >Dermatologist</a></li>
-                     <li><a href="" data-spesialis="Neurologist" >Neurologist</a></li>
-                     <li><a href="" data-spesialis="Orthopedic" >Orthopedic</a></li>
-                     <li><a href="" data-spesialis="Pediatrician" >Pediatrician</a></li>
-                     <li><a href="" data-spesialis="Psychiatrist" >Psychiatrist</a></li>
-=======
-                     <li><a href="">Cardiologist</a></li>
-                     <li><a href="">Dermatologist</a></li>
-                     <li><a href="">Neurologist</a></li>
-                     <li><a href="">Orthopedic</a></li>
-                     <li><a href="">Pediatrician</a></li>
-                     <li><a href="">Psychiatrist</a></li>
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
+                     <li><a href="#" data-spesialis="Cardiologist" >Cardiologist</a></li>
+                     <li><a href="#" data-spesialis="Dermatologist" >Dermatologist</a></li>
+                     <li><a href="#" data-spesialis="Neurologist" >Neurologist</a></li>
+                     <li><a href="#" data-spesialis="Orthopedic" >Orthopedic</a></li>
+                     <li><a href="#" data-spesialis="Pediatrician" >Pediatrician</a></li>
+                     <li><a href="#" data-spesialis="Psychiatrist" >Psychiatrist</a></li>
                  </ul>
              </div>
          </div>
@@ -73,28 +60,22 @@
              <div class="dropdown">
                <p>pilih nama dokter</p>
                  <div class="select">
-                     <span class="selected"><input type="text" class="search" placeholder="Pilih Nama Dokter"></span>
+                     <span class="selected"><input type="text" class="search dokter-input" placeholder="Pilih Nama Dokter"></span>
                      <div class="caret"></div>
                      
                  </div>
-                 <ul class="menu">
-<<<<<<< HEAD
-                     <li><a href="">Dr. Ad</a></li>
-=======
-                     <li><a href="">Dr. A</a></li>
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
-                     <li><a href="">Dr. B</a></li>
-                     <li><a href="">Dr. C</a></li>
-                     <li><a href="">Dr. D</a></li>
-                     <li><a href="">Dr. E</a></li>
+                 <ul class="menu dokter-menu">
+                     {{-- <li><a href="">Dr. Andi</a></li>
+                     <li><a href="">Dr. Budi</a></li> --}}
+                     @foreach($jadwal as $j)
+                        <li data-spesialis="{{ $j->dokter->spesialis }}">
+                           <a href="#" data-id="{{ $j->dokter->id }}" data-nama="{{ $j->dokter->nama_dokter }}" data-spesialis="{{ $j->dokter->spesialis }}">{{ $j->dokter->nama_dokter }}</a>
+                        </li>
+                     @endforeach
                  </ul>
              </div>
          </div>
-<<<<<<< HEAD
-         <input name="nama_dokter" type="submit" value="Lihat Jadwal" class="button">
-=======
-         <input type="submit" value="Lihat Jadwal" class="button">
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
+         <input id="lihat-jadwal" name="nama_dokter" type="button" value="Lihat Jadwal" class="button">
      </div>
 
       <div class="show-form">
@@ -109,29 +90,19 @@
                   <thead>
                      <tr>
                         <td>senin</td>
-<<<<<<< HEAD
                         <td>selasa</td>
-=======
-                        <td>slasa</td>
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                         <td>rabu</td>
                         <td>kamis</td>
                         <td>jumat</td>
                      </tr>
                   </thead>
                   <tbody>
-<<<<<<< HEAD
-                     @foreach ($jadwal as $d)
+                     {{-- @foreach ($jadwal as $d)
                      <tr>
                         <td>08.00</td>
                         <td>{{ $d->jam_mulai }}</td>
                      </tr>
-                     @endforeach
-=======
-                     <tr>
-                        <td>08.00</td>
-                     </tr>
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
+                     @endforeach --}}
                   </tbody>
                </table>
             </div>
@@ -160,6 +131,7 @@
 
   <script src="{{ asset('lg/script.js') }}"></script>
   <script src="{{ asset('lg/dropdown.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
   
 </body>
 </html>
