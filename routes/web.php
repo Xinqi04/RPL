@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\RadiologiController;
 use App\Http\Controllers\RekamController;
+use App\Http\Controllers\DokterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,9 +43,16 @@ Route::get('/jadwal-dokter', [DokterController::class, 'index'])->name('jadwal-d
 
 Route::get('/rekam-medis', [RekamController::class,'index'])->name('rekam-medis');
 Route::get('/lihat-rekam-medis}', [RekamController::class,'show'])->name('lihat-rekam-medis');
+
 Route::get('/jadwal-dokter', [JadwalController::class, 'index'])->name('jadwal-dokter');
 Route::get('/dokters', [JadwalController::class, 'show'])->name('dokters');
 Route::get('/dokters/{dokter:nama_dokter}', [JadwalController::class, 'show'])->name('dokters');
+Route::post('/jadwal-dokter-proses', [JadwalController::class, 'jadwal_dokter_proses'])->name('jadwal-dokter-proses');
+
+Route::get('/api/dokter', [DokterController::class, 'getDokterBySpesialis']);
+Route::get('/api/jadwal', [DokterController::class, 'getJadwalByDokter']);
+
+
 
 Route::get('/registrasi-pasien', [PasienController::class, 'registrasi_pasien'])->name('registrasi-pasien');
 Route::post('/registrasi-pasien-proses',[PasienController::class,'registrasi_pasien_proses'])->name('registrasi-pasien-proses');

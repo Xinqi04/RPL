@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ asset('lg/style.css') }}">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <title>Mediacal+</title>
+  <title>Medical+</title>
 </head>
 <body>
 
@@ -57,7 +57,7 @@
              <div class="dropdown">
                <p>pilih nama dokter</p>
                  <div class="select">
-                     <span class="selected"><input type="text" class="search" placeholder="Pilih Nama Dokter"></span>
+                     <span class="selected"><input type="text" class="search dokter-input" placeholder="Pilih Nama Dokter"></span>
                      <div class="caret"></div>
                      
                  </div>
@@ -125,6 +125,7 @@
 
   <script src="{{ asset('lg/script.js') }}"></script>
   <script src="{{ asset('lg/dropdown.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
   
 </body>
 </html>

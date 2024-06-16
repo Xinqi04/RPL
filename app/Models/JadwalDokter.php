@@ -16,8 +16,8 @@ class JadwalDokter extends Model
     protected $fillable = ['dokter_id', 'hari', 'jam_mulai', 'jam_selesai'];
 
     // Define the relationship to the Dokter model
-    // public function dokter()
-    // {
-    //     return $this->belongsTo(Dokter::class);
-    // }
+    public function dokter()
+    {
+        return $this->belongsTo(Dokter::class);
+    }
 }

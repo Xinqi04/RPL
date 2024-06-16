@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class PasienController extends Controller
 {
-    // public function index () 
-    // {
-    //     return view('registrasi-pasien');
-    // }
 
     public function registrasi_pasien()
     {
