@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\JanjiRsController;
+use App\Http\Controllers\DokterController;
 use App\Http\Controllers\LaboratoriumController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PasienController;
@@ -36,17 +37,19 @@ Route::get('/register',[LoginController::class,'register'])->name('register');
 Route::post('/register-proses',[LoginController::class,'register_proses'])->name('register-proses');
 
 
+// dokter
+Route::get('/jadwal-dokter', [DokterController::class, 'index'])->name('jadwal-dokter');
+
 Route::get('/rekam-medis', [RekamController::class,'index'])->name('rekam-medis');
+Route::get('/lihat-rekam-medis}', [RekamController::class,'show'])->name('lihat-rekam-medis');
 Route::get('/jadwal-dokter', [JadwalController::class, 'index'])->name('jadwal-dokter');
-<<<<<<< HEAD
+Route::get('/dokters', [JadwalController::class, 'show'])->name('dokters');
+Route::get('/dokters/{dokter:nama_dokter}', [JadwalController::class, 'show'])->name('dokters');
 
 Route::get('/registrasi-pasien', [PasienController::class, 'registrasi_pasien'])->name('registrasi-pasien');
 Route::post('/registrasi-pasien-proses',[PasienController::class,'registrasi_pasien_proses'])->name('registrasi-pasien-proses');
 
 
-=======
-Route::get('/registrasi-pasien', [PasienController::class, 'index'])->name('registrasi-pasien');
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
 Route::get('/registrasi-janji-rs', [JanjiRsController::class, 'index'])->name('registrasi-janji-rs');
 Route::get('/registrasi-labo', [LaboratoriumController::class, 'index'])->name('registrasi-labo');
 Route::get('/registrasi-radio', [RadiologiController::class, 'index'])->name('registrasi-radio');

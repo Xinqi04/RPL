@@ -35,30 +35,28 @@
   </header>
 
   <div class="welcome-text" style="margin: 0 0 0; margin-top: 10rem; margin-bottom: 2rem; width: 100%; height:100%; text-align:center; justify-content: center; display: flex; padding: .4rem; max-width: 100%;">
-   <h2>Lihat <br> Rekam Medis</h2>
+   <h2>Rekam Medis</h2>
  </div>
 
    <div>
       <div class="container">
          <div class="pasien">
-            <a style="color: inherit; text-decoration: none" href="{{ route('lihat-rekam-medis') }}">
-               <div class="card">
-                  <div class="card-form">
-                     <div class="card-img">
-                        <img src="{{ asset('lg/img/person.png') }}" width="96" height="96" style="border: none">
-                     </div>
-                     <div class="card-text">
-                        <h2 style="font-size: 2.5rem; margin-bottom: .5rem; font-weight: bolder">Nirwan Rasyid Ridlo</h2>
-                        <p style="font-size: 1.3rem">1227050105 - <span>16 Juni 2024</span></p>
-                     </div>
-                     <div>
-                        <img class="people" src="{{ asset('lg/img/people.png') }}" alt="" width="96" height="96">
-                     </div>
+            <div class="card">
+               <div class="card-form">
+                  <div class="card-img">
+                     <img src="{{ asset('lg/img/person.png') }}" width="96" height="96" style="border: none">
+                  </div>
+                  <div class="card-text">
+                     <h2 style="font-size: 2.5rem; margin-bottom: .5rem; font-weight: bolder">Nirwan Rasyid Ridlo</h2>
+                     <p style="font-size: 1.3rem">1227050105 - <span>16 Juni 2024</span></p>
+                  </div>
+                  <div>
+                     <img class="people" src="{{ asset('lg/img/people.png') }}" alt="" width="96" height="96">
                   </div>
                </div>
-            </a>    
+            </div>
          </div>
-         {{-- <div class="riwayat">
+         <div class="riwayat">
             <h2>Riwayat Pasien</h2>
             <div class="card">
                <div class="card-form" style="position: relative;">
@@ -77,7 +75,7 @@
             </div>
            
             
-         </div> --}}
+         </div>
       </div>
    </div>
 

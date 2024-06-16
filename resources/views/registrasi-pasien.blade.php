@@ -39,22 +39,14 @@
   <div class="form-box" style="margin-top: 0; padding-top: 1rem; padding-bottom: 1rem">
    <div class="show-form-box">
       <div class="input-form" style="margin: 0; height: auto; padding: 6rem">
-<<<<<<< HEAD
          <form action="{{ route('registrasi-pasien-proses') }}" method="POST" enctype="multipart/form-data" style="max-width: none; font-size: 2rem">
           @csrf
-=======
-         <form action="" style="max-width: none; font-size: 2rem">
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
             <div class="actual-form">
                <div class="input-wrap" style="margin-top: 3rem">
                   <p>Nama Pasien</p>
                   <input 
                    type="text" 
-<<<<<<< HEAD
                    name="nama_pasien"
-=======
-                   name="pasien"
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                    class="input-field"
                    autocomplete="off"
                    required
@@ -65,11 +57,7 @@
                   <p>Tanggal lahir</p>
                   <input 
                    type="date" 
-<<<<<<< HEAD
                    name="tanggal_lahir"
-=======
-                   name="pasien"
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                    class="input-field"
                    autocomplete="off"
                    required
@@ -80,11 +68,7 @@
                   <p>Nomor Telepon</p>
                   <input 
                    type="text" 
-<<<<<<< HEAD
                    name="no_hp"
-=======
-                   name="pasien"
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
                    class="input-field"
                    autocomplete="off"
                    required
@@ -92,11 +76,7 @@
                    />
                  </div>
                <p style="margin-top: 4rem">Upload foto ktp</p>               
-<<<<<<< HEAD
                <input type="file" name="photo" value="browse" class="form-control" > 
-=======
-               <input type="submit" value="browse" class="button-browse" >
->>>>>>> 9d20d89bdc95504b9c62bedb0c6d91e2af7c5b5a
              </div>
          <input type="submit" value="submit" class="button">
          </form>

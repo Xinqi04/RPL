@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jadwal_dokter', function (Blueprint $table) {
+        Schema::create('jadwal_dokters', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('dokter_id'); // foreign key to dokter table
             $table->string('hari');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Add foreign key constraint
-            $table->foreign('dokter_id')->references('id')->on('dokter')->onDelete('cascade');;
+            $table->foreign('dokter_id')->references('id')->on('dokters')->onDelete('cascade');;
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jadwal_dokter');
+        Schema::dropIfExists('jadwal_dokters');
     }
 };
