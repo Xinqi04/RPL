@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('jadwal_dokters', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_dokter'); // foreign key to dokter table
+            $table->unsignedBigInteger('dokter_id'); // foreign key to dokter table
             $table->string('hari');
             $table->time('jam_mulai');
             $table->time('jam_selesai');
             $table->timestamps();
 
             // Add foreign key constraint
-            $table->foreign('id_dokter')->references('id')->on('dokters')->onDelete('cascade');
+            $table->foreign('dokter_id')->references('id')->on('dokter')->onDelete('cascade');;
         });
     }
 

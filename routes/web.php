@@ -37,7 +37,11 @@ Route::get('/register',[LoginController::class,'register'])->name('register');
 Route::post('/register-proses',[LoginController::class,'register_proses'])->name('register-proses');
 
 
+// dokter
+Route::get('/jadwal-dokter', [DokterController::class, 'index'])->name('jadwal-dokter');
+
 Route::get('/rekam-medis', [RekamController::class,'index'])->name('rekam-medis');
+Route::get('/lihat-rekam-medis}', [RekamController::class,'show'])->name('lihat-rekam-medis');
 
 Route::get('/jadwal-dokter', [JadwalController::class, 'index'])->name('jadwal-dokter');
 Route::get('/lihat-jadwal-spesialis/{id}',[JadwalController::class,'lihat_jadwal_spesialis'])->name('lihat-jadwal-spesialis');

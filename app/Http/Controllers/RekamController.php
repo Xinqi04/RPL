@@ -11,4 +11,9 @@ class RekamController extends Controller
     {
         return view('rekam-medis');
     }
+
+    public function show () 
+    {
+        return view('lihat-rekam-medis');
+    }
 }

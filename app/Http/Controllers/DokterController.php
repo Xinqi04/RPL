@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dokter;
 use App\Models\JadwalDokter;
 use Illuminate\Http\Request;
+use App\Models\Dokter;
 
 class DokterController extends Controller
 {
@@ -22,5 +23,12 @@ class DokterController extends Controller
         $dokter = Dokter::with('jadwal')->findOrFail($dokterId);
 
         return view('dokter-jadwal-result', compact('dokter'));
+    }
+    public function index()
+    {
+        dd(Dokter::get());
+        return view('jadwal-dokter', [
+            
+        ]);
     }
 }
