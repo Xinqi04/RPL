@@ -13,11 +13,12 @@ class JadwalDokter extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['dokter_id', 'hari', 'jam_mulai', 'jam_selesai'];
+    protected $fillable = ['id_dokter', 'hari', 'jam_mulai', 'jam_selesai'];
 
     // Define the relationship to the Dokter model
     public function dokter()
     {
         return $this->belongsTo(Dokter::class);
     }
+
 }

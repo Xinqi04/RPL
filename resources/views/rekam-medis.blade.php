@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{ asset('lg/style.css') }}">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <title>Medical+ </a></title>
+  <title>Medical+</a></title>
 </head>
 <body>
 
@@ -41,15 +41,16 @@
    <div>
       <div class="container">
          <div class="pasien">
-            <a style="color: inherit; text-decoration: none" href="{{ route('lihat-rekam-medis') }}">
+            @foreach ($user->pasiens as $p)
+            <a style="color: inherit; text-decoration: none" href="{{ route('lihat-rekam-medis',['id' => $p->id]) }}">
                <div class="card">
                   <div class="card-form">
                      <div class="card-img">
                         <img src="{{ asset('lg/img/person.png') }}" width="96" height="96" style="border: none">
                      </div>
                      <div class="card-text">
-                        <h2 style="font-size: 2.5rem; margin-bottom: .5rem; font-weight: bolder">Nirwan Rasyid Ridlo</h2>
-                        <p style="font-size: 1.3rem">1227050105 - <span>16 Juni 2024</span></p>
+                        <h2 style="font-size: 2.5rem; margin-bottom: .5rem; font-weight: bolder">{{ $p->nama }}</h2>
+                        <p style="font-size: 1.3rem">Tanggal Lahir : <span>{{ $p->tanggal_lahir }}</span></p>
                      </div>
                      <div>
                         <img class="people" src="{{ asset('lg/img/people.png') }}" alt="" width="96" height="96">
@@ -57,6 +58,7 @@
                   </div>
                </div>
             </a>    
+            @endforeach
          </div>
          {{-- <div class="riwayat">
             <h2>Riwayat Pasien</h2>

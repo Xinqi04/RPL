@@ -23,12 +23,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DokterSeeder::class,
             JadwalDokterSeeder::class,
-        ]);
-        $this->call([
             Userseeder::class,
+            JadwalDokterSeeder::class,
+            RawatJalanSeeder::class,
+            RekamMedisSeeder::class,
+            SpesialisSeeder::class,
         ]);
-        $this->call([
-            DokterSeeder::class,
-        ]);
+    
     }
 }

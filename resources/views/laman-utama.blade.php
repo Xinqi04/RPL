@@ -187,14 +187,14 @@
                 <a href="{{ route('jadwal-dokter') }}">
                   <img src="{{ asset('lg/img/jadwal_dok.png') }}" alt="Jadwal Dokter">
                   <h3>Jadwal Dokter</h3>
-                  <p>Lorem Ipsum.</p>
+                  <p>Cek Jadwal Dokter yang praktik hari ini</p>
                 </a>
             </div>
             <div class="service-box">
               <a href="{{ route('registrasi-pasien') }}">
                 <img src="{{ asset('lg/img/rawat_inap.png') }}" alt="Fasilitas Rawat Inap">
                 <h3>Daftar Pasien Baru</h3>
-                <p>Lorem Ipsum.</p>
+                <p>Daftarkan data diri untuk menggunakan layanan</p>
               </a>
             </div>
         </div>

@@ -35,7 +35,7 @@
   </header>
 
   <div class="welcome-text" style="margin: 0 0 0; margin-top: 10rem; margin-bottom: 2rem; width: 100%; height:100%; text-align:center; justify-content: center; display: flex; padding: .4rem; max-width: 100%;">
-   <h2>Registrasi <br>Laboratorium</h2>
+   <h2>Registrasi <br>Cek Radiologi</h2>
  </div>
 
   <div class="form-box" style="margin-top: 0; padding-top: 1rem; padding-bottom: 1rem; margin-bottom: 10rem;">
@@ -52,12 +52,15 @@
                      <div class="caret"></div>
                  </div>
                  <ul class="menu">
+                     <!-- <li><a href=""></a>--</li>
                      <li><a href=""></a>--</li>
                      <li><a href=""></a>--</li>
                      <li><a href=""></a>--</li>
                      <li><a href=""></a>--</li>
-                     <li><a href=""></a>--</li>
-                     <li><a href=""></a>--</li>
+                     <li><a href=""></a>--</li> -->
+                     @foreach ($user->pasiens as $p)
+                        <li><a href=""></a>{{$p->nama}}<li>
+                     @endforeach
                  </ul>
              </div>
          </div>
@@ -69,17 +72,15 @@
                   <p>pilih Kategori Cek</p>
                     <div class="select">
                         <span class="selected">
-                           <input type="text" class="search" placeholder="Pilih Katehori cek">
+                           <input type="text" class="search" placeholder="Pilih Kategori Cek">
                         </span>
                         <div class="caret"></div>
                     </div>
                     <ul class="menu">
-                        <li><a href="">Cardiologist</a></li>
-                        <li><a href="">Dermatologist</a></li>
-                        <li><a href="">Neurologist</a></li>
-                        <li><a href="">Orthopedic</a></li>
-                        <li><a href="">Pediatrician</a></li>
-                        <li><a href="">Psychiatrist</a></li>
+                        <li><a href="">Hematology</a></li>
+                        <li><a href="">Kimia Darah</a></li>
+                        <li><a href="">Imunoserologi</a></li>
+                        <li><a href="">Urinalisasi</a></li>
                     </ul>
                 </div>
                
@@ -93,6 +94,8 @@
                    required
                    placeholder="Tanggal Lahir"
                    style="font-size: 1.5rem"
+                   min="{{ \Carbon\Carbon::tomorrow()->format('Y-m-d') }}"
+
                    />
                  </div>
              </div>

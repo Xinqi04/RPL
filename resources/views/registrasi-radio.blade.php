@@ -52,12 +52,15 @@
                      <div class="caret"></div>
                  </div>
                  <ul class="menu">
+                     {{-- <li><a href=""></a>--</li>
                      <li><a href=""></a>--</li>
                      <li><a href=""></a>--</li>
                      <li><a href=""></a>--</li>
                      <li><a href=""></a>--</li>
-                     <li><a href=""></a>--</li>
-                     <li><a href=""></a>--</li>
+                     <li><a href=""></a>--</li> --}}
+                     @foreach ($user->pasiens as $p)
+                        <li><a href=""></a>{{$p->nama}}<li>
+                     @endforeach
                  </ul>
              </div>
          </div>
@@ -74,12 +77,12 @@
                         <div class="caret"></div>
                     </div>
                     <ul class="menu">
-                        <li><a href="">Cardiologist</a></li>
-                        <li><a href="">Dermatologist</a></li>
-                        <li><a href="">Neurologist</a></li>
-                        <li><a href="">Orthopedic</a></li>
-                        <li><a href="">Pediatrician</a></li>
-                        <li><a href="">Psychiatrist</a></li>
+                        <li><a href="">Rontgen</a></li>
+                        <li><a href="">USG</a></li>
+                        <li><a href="">HSG</a></li>
+                        {{-- @foreach ($kategori as $k)
+                          <li><a href="">{{$k}}</a><li>
+                        @endforeach --}}
                     </ul>
                 </div>
                
@@ -93,6 +96,7 @@
                    required
                    placeholder="Tanggal Lahir"
                    style="font-size: 1.5rem"
+                   min="{{ \Carbon\Carbon::tomorrow()->format('Y-m-d') }}"
                    />
                  </div>
              </div>
