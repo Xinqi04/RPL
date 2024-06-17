@@ -40,6 +40,9 @@ Route::post('/register-proses',[LoginController::class,'register_proses'])->name
 Route::get('/rekam-medis', [RekamController::class,'index'])->name('rekam-medis');
 
 Route::get('/jadwal-dokter', [JadwalController::class, 'index'])->name('jadwal-dokter');
+Route::get('/lihat-jadwal-spesialis/{id}',[JadwalController::class,'lihat_jadwal_spesialis'])->name('lihat-jadwal-spesialis');
+Route::get('/lihat-jadwal-dokter/{id}',[JadwalController::class,'lihat_jadwal_dokter'])->name('lihat-jadwal-dokter');
+
 Route::post('/jadwal-dokter-proses', [JadwalController::class, 'jadwal_dokter_proses'])->name('jadwal-dokter-proses');
 
 Route::get('/api/dokter', [DokterController::class, 'getDokterBySpesialis']);
@@ -49,6 +52,7 @@ Route::get('/api/jadwal', [DokterController::class, 'getJadwalByDokter']);
 
 Route::get('/registrasi-pasien', [PasienController::class, 'registrasi_pasien'])->name('registrasi-pasien');
 Route::post('/registrasi-pasien-proses',[PasienController::class,'registrasi_pasien_proses'])->name('registrasi-pasien-proses');
+
 
 
 //Route::get('/registrasi-pasien', [PasienController::class, 'index'])->name('registrasi-pasien');
@@ -83,4 +87,3 @@ Route::get('/admin',[HomeController::class,'index'])->name('index');
   Route::put('/update/{id}',[HomeController::class,'update'])->name('admin.update');
   
   Route::delete('/delete/{id}',[HomeController::class,'delete'])->name('admin.delete');
-

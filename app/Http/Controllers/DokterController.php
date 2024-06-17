@@ -8,17 +8,19 @@ use Illuminate\Http\Request;
 
 class DokterController extends Controller
 {
-    public function getDokterBySpesialis(Request $request)
+    public function showJadwalForm()
     {
-        $spesialis = $request->query('spesialis');
-        $dokter = Dokter::where('spesialis', $spesialis)->get();
-        return response()->json($dokter);
+        $spesialisList = ['Cardiologist', 'Dermatologist', 'Neurologist', 'Orthopedic', 'Pediatrician', 'Psychiatrist'];
+        return view('jadwal-dokter', compact('spesialisList'));
     }
 
-    public function getJadwalByDokter(Request $request)
+    public function showJadwal(Request $request)
     {
-        $dokterId = $request->query('dokter_id');
-        $jadwal = JadwalDokter::where('dokter_id', $dokterId)->get();
-        return response()->json($jadwal);
+        $spesialis = $request->input('spesialis');
+        $dokterId = $request->input('dokter');
+
+        $dokter = Dokter::with('jadwal')->findOrFail($dokterId);
+
+        return view('dokter-jadwal-result', compact('dokter'));
     }
 }

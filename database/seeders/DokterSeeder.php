@@ -17,23 +17,23 @@ class DokterSeeder extends Seeder
     {
         // Dokter::create([
         //     'nama_dokter' => 'Dr. Andi',
-        //     'spesialis' => 'Neurologist',
+        //     'spesialis' => '1',
         //     'jenis_kelamin' => 'L',
         //     'no_hp' => '081234567890',
         // ]);
 
-        Dokter::create([
-            'nama_dokter' => 'Dr. Budi',
-            'spesialis' => 'Cardiologist',
-            'jenis_kelamin' => 'L',
-            'no_hp' => '081234567891',
-        ]);
+        // Dokter::create([
+        //     'nama_dokter' => 'Dr. Budi',
+        //     'id_spesialis' => '2',
+        //     'jenis_kelamin' => 'L',
+        //     'no_hp' => '081234567891',
+        // ]);
 
         Dokter::create([
-            'nama_dokter' => 'Dr. Citra',
-            'spesialis' => 'Dermatologist',
-            'jenis_kelamin' => 'P',
-            'no_hp' => '081234567892',
+            'nama_dokter' => 'Dr. Raka',
+            'spesialis_id' => '6',
+            'jenis_kelamin' => 'L',
+            'no_hp' => '081234569876',
         ]);
     }
 }

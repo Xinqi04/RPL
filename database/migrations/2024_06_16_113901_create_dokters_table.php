@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('dokters', function (Blueprint $table) {
             $table->id();
             $table->string('nama_dokter');
-            $table->string('spesialis');
+            $table->unsignedBigInteger('id_spesialis');
             $table->char('jenis_kelamin',1);
             $table->string('no_hp');
             $table->timestamps();
+
+            $table->foreign('id_spesialis')->references('id')->on('spesialis')->onDelete('cascade');
         });
     }
 

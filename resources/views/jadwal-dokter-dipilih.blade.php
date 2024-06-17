@@ -41,14 +41,17 @@
                <p>pilih spesialis dokter</p>
                  <div class="select">
                      <span class="selected">
-                        <input name="spesialis" class="search" placeholder="Pilih Spesialis Dokter">
+                        <input name="spesialis" class="search spesialis-input" placeholder="Pilih Spesialis Dokter">
                      </span>
                      <div class="caret"></div>
                  </div>
                  <ul class="menu">
-                  @foreach($spesialis as $s)
-                   <li><a href="{{ route('lihat-jadwal-spesialis', ['id' => $s->id]) }}" data-spesialis="" >{{ $s->nama_spesialis }}</a></li>
-                  @endforeach
+                     <li><a href="#" data-spesialis="Cardiologist" >Cardiologist</a></li>
+                     <li><a href="#" data-spesialis="Dermatologist" >Dermatologist</a></li>
+                     <li><a href="#" data-spesialis="Neurologist" >Neurologist</a></li>
+                     <li><a href="#" data-spesialis="Orthopedic" >Orthopedic</a></li>
+                     <li><a href="#" data-spesialis="Pediatrician" >Pediatrician</a></li>
+                     <li><a href="#" data-spesialis="Psychiatrist" >Psychiatrist</a></li>
                  </ul>
              </div>
          </div>
@@ -61,24 +64,27 @@
                      <div class="caret"></div>
                      
                  </div>
-                 <ul class="menu" >
-                  @foreach ($dokters as $d)
-                     <li><a style="text-decoration: none; color: inherit" href="{{ route('lihat-jadwal-dokter',['id' => $d->id]) }}">{{ $d->nama_dokter }}</a></li>
-                  @endforeach
-                     
+                 <ul class="menu dokter-menu">
+                     @foreach ($data->dokters as $d)
+                        <li>
+                           <a href="#" data-id="{{ $d->id }}" data-nama="{{ $d->nama_dokter }}" data-spesialis="{{ $d->spesialis }}">{{ $d->nama_dokter }}</a>
+                        </li>
+                    @endforeach
                  </ul>
              </div>
          </div>
-         <input name="nama_dokter" type="submit" value="Lihat Jadwal" class="button">
+         <input id="lihat-jadwal" name="nama_dokter" type="button" value="Lihat Jadwal" class="button">
      </div>
 
+     
       <div class="show-form">
+        @foreach ($data->dokters as $d)
          <div class="info-dokter">
             <div class="dokter-img">
                <img src="" alt="foto dokter">
             </div>
-            <h2>Nama Dokter</h2>
-            <p>Spesialis Dokter</p>
+            <h2>{{ $d->nama_dokter }}</h2>
+            <p>{{ $data->nama_spesialis }}</p>
             <div class="jadwal-hari">
                <table>
                   <thead>
@@ -91,17 +97,19 @@
                      </tr>
                   </thead>
                   <tbody>
-                     
+                     {{-- @foreach ($jadwal as $d)
                      <tr>
                         <td>08.00</td>
-                        <td></td>
+                        <td>{{ $d->jam_mulai }}</td>
                      </tr>
-                    
+                     @endforeach --}}
                   </tbody>
                </table>
             </div>
          </div>
+         @endforeach
       </div>
+      
    </div>
   </div>
 
@@ -125,7 +133,6 @@
 
   <script src="{{ asset('lg/script.js') }}"></script>
   <script src="{{ asset('lg/dropdown.js') }}"></script>
-  <script src="{{ asset('js/app.js') }}"></script>
   
 </body>
 </html>

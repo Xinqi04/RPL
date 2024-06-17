@@ -414,9 +414,9 @@ header .menu-bars {
   box-shadow: var(--box-shadow);
 }
 
-.fomr-input {
+/* .form-input {
  
-}
+} */
 
 .info-kontak{
   width: 40%;
@@ -701,6 +701,7 @@ footer {
   color: #000000;
   font-weight: 600;
 }
+
 
 .info-dokter{
   background-color: #5A60AB;

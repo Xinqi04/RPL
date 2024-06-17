@@ -22,4 +22,11 @@ class Dokter extends Model
     {
         return $this->hasMany(JadwalDokter::class);
     }
+
+    public function spesialis()
+    {
+        return $this->belongsTo(Spesialis::class);
+    }
+
+    
 }
