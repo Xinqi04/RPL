@@ -66,7 +66,7 @@
               {{-- <p>Rawat Jalan: {{ $data->rawatJalan->details }}</p> --}}
             </div>
             <div style="position: absolute; bottom: 0; right: 0; margin: 1rem;">
-              <button class="button" type="button" style="align-items: end; justify-content:end; margin-bottom: -2rem; padding-left: 1.5rem; padding-right: 1.5rem; font-size: 1rem; height: 20px">Download PDF</button>
+              <button onclick="window.location.href='{{ route('lihat-rekam-medis',['id' => $data->id]) }}?export=pdf'" class="button" type="button" style="align-items: end; justify-content:end; margin-bottom: -2rem; padding-left: 1.5rem; padding-right: 1.5rem; font-size: 1rem; height: 20px">Download PDF</button>
             </div>
           </div>
         </div>

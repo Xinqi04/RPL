@@ -16,7 +16,10 @@ class PasienController extends Controller
     {
         return view('registrasi-pasien');
     }
-
+    public function registrasi_pasien_berhasil(){
+        return view('laman-masuk'); 
+    }
+    
     public function registrasi_pasien_proses(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -47,8 +50,8 @@ class PasienController extends Controller
 
         // Simpan data ke database
         pasien::create($data);
-
-        return view('laman-masuk');
+        
+        return redirect()->route('registrasi-pasien-berhasil')->with('pasien_success', 'Data pasien berhasil didaftarkan!');
     }
 
 }

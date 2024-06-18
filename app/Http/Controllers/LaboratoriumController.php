@@ -32,12 +32,16 @@ class LaboratoriumController extends Controller
         return $days[$day];
     }
 
+    public function registrasi_labo_berhasil()
+    {
+        return view('laman-masuk');
+    }
     public function registrasi_labo_proses(Request $request)
     {
         // Validasi input
         // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'nama_pasien' => 'required',
+            'id_pasien' => 'required',
             'spesialis' => 'required',
             'tanggal_diperiksa' => 'required|date',
         ]);
@@ -54,12 +58,12 @@ class LaboratoriumController extends Controller
         $hari = Carbon::parse($tanggal_diperiksa)->format('l'); // Format 'l' akan memberikan nama hari dalam bahasa Inggris
         $hari = $this->translateDayToIndonesian($hari);
 
-        $janji['pasiens_id'] = $request->nama_pasien;
+        $janji['pasiens_id'] = $request->id_pasien;
         $janji['kategori'] = $spesialis;
         $janji['tanggal_pemeriksaan'] = $tanggal_diperiksa;
         Laboratorium::create($janji);
 
         // return redirect()->route('laman-masuk')->with('success', 'Janji temu berhasil dibuat.');
-        return view('laman-masuk');
+        return redirect()->route('registrasi-labo-berhasil')->with('labo_success', 'Pendaftaran Laboratorium Sukses! Pasien ' . $request->nama_pasien . ' telah berhasil didaftarkan untuk pemeriksaan ' . $request->spesialis . ' pada tanggal ' . $request->tanggal_diperiksa . '. Nomor antrian Anda akan segera diinformasikan.');
     }
 }

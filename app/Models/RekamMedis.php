@@ -21,4 +21,10 @@ class RekamMedis extends Model
     {
         return $this->belongsTo(RawatJalan::class,'rawat_jalans_id');
     }
+
+    public function pasien()
+    {
+        return $this->belongsTo(Pasien::class, 'pasiens_id');
+    }
+
 }

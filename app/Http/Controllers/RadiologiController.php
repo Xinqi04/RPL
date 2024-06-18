@@ -31,12 +31,17 @@ class RadiologiController extends Controller
         return $days[$day];
     }
 
+    public function registrasi_radio_berhasil()
+    {
+        return view('laman-masuk');
+    }
+
     public function registrasi_radio_proses(Request $request)
     {
         // Validasi input
         // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'nama_pasien' => 'required',
+            'id_pasien' => 'required',
             'spesialis' => 'required',
             'tanggal_diperiksa' => 'required|date',
         ]);
@@ -59,6 +64,6 @@ class RadiologiController extends Controller
         Radiologi::create($janji);
 
         // return redirect()->route('laman-masuk')->with('success', 'Janji temu berhasil dibuat.');
-        return view('laman-masuk');
+        return redirect()->route('registrasi-radio-berhasil')->with('radio_success', 'Pendaftaran Radiologi Sukses! Pasien ' . $request->nama_pasien . ' telah berhasil didaftarkan untuk pemeriksaan ' . $request->spesialis . ' pada tanggal ' . $request->tanggal_diperiksa . '. Nomor antrian Anda akan segera diinformasikan.');
     }
 }

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ asset('lg/style.css') }}">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <title>Mediacal+</title>
+  <title>Medical+</title>
 </head>
 <body>
 
@@ -23,6 +23,7 @@
       <a href="#artikel">artikel</a>
       <a href="#layanan">layanan</a>
       <a href="#kontak">kontak</a>
+      <a href="{{ route('profile') }}">profil</a>
     </nav>
 
     
@@ -279,6 +280,64 @@
   </footer>
 
 <script src="{{ asset('lg/script.js') }}"></script>
+
+<!-- <script>
+    @if(session('success'))
+      Swal.fire({
+        title: 'Success!',
+        text: "{{ session('success') }}",
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    @endif
+</script> -->
+
+<script>
+    @if(session('pasien_success'))
+      Swal.fire({
+        title: 'Success!',
+        text: "{{ session('pasien_success') }}",
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    @endif
+
+    @if(session('login_success'))
+      Swal.fire({
+        title: 'Success!',
+        text: "{{ session('login_success') }}",
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    @endif
+
+    @if(session('labo_success'))
+      Swal.fire({
+        title: 'Success!',
+        text: "{{ session('labo_success') }}",
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    @endif
+
+    @if(session('radio_success'))
+      Swal.fire({
+        title: 'Success!',
+        text: "{{ session('radio_success') }}",
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    @endif
+
+    @if(session('janji_rs_success'))
+      Swal.fire({
+        title: 'Success!',
+        text: "{{ session('janji_rs_success') }}",  
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    @endif
+</script>
 
 
 </body>

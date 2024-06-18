@@ -51,7 +51,7 @@
                             <p style="font-size: 2rem; font-weight: bolder; color: #63C4AB">Pilih pasien</p>
                             <div class="select">
                                 <span class="selected">
-                                    <select name="nama_pasien" class="search" required>
+                                    <select name="id_pasien" class="search" required>
                                         <option value="" disabled selected>Daftar Nama Pasien</option>
                                         @foreach ($user->pasiens as $p)
                                             <option value="{{ $p->id }}">{{ $p->nama }}</option>

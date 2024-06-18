@@ -423,13 +423,9 @@ header .menu-bars {
   box-shadow: var(--box-shadow);
 }
 
-<<<<<<< HEAD
 /* .form-input {
  
 } */
-=======
-
->>>>>>> 8d3be21a5eb5c2f867e23dc64ecf570608199b03
 
 .info-kontak{
   width: 40%;
@@ -510,7 +506,8 @@ header .menu-bars {
   padding: 2rem;
   width: 1000px;
   background-color: #ffff;
-  height: 500px;
+  height: auto;
+  min-height: 500px;
   border-radius: 2rem 2rem 0 0;
 }
 
@@ -798,12 +795,13 @@ footer {
   font-size: 1.4rem;
   color: #000000;
   font-weight: 600;
+  width: 100%;
 }
 
 .search {
   background: none;
-  width: 300px;
-  max-width: 400px;
+  width: 100%;
+  max-width: 100%;
   font-size: 1.4rem;
   color: #000000;
   font-weight: 600;
@@ -854,6 +852,76 @@ footer {
   margin: 2rem;
   margin-bottom: .2rem;
   font-size: 2.8rem;
+}
+
+.profil-user {
+  max-width: 1464px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+}
+
+.profil-form {
+  background-color: white;
+  height: 100%;
+  margin-top: -20rem;
+  border-radius: 5rem 5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+  width: 98.4%;
+}
+
+.profil-pic {
+  border-radius: 50%;
+  border: 10px solid black;
+  height: 150px;
+  width: 150px;
+  margin-top: -80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profil-pic img {
+  border-radius: 50%;
+  height: 100px; /* Sesuaikan dengan ukuran gambar Anda */
+  width: 100px; /* Sesuaikan dengan ukuran gambar Anda */
+  object-fit: cover;
+}
+
+
+.profil-info {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.pasien-terdaftar{
+  width: 80%;
+  border-top: #63C4AB solid 5px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.pasien-terdaftar h1 {
+  color: #63C4AB;
+}
+
+.button-logout {
+  margin-top: 8rem;
+  width: 300px;
+}
+
+.button-logout .button-submit {
+  max-width: 300px;
+  color: white;
+  font-weight: bold;
 }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pasien;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -30,7 +31,7 @@ class LoginController extends Controller
         ];
 
         if(Auth::attempt($data)){
-            return redirect()->route('login-berhasil')->with('success', 'Login Sukses!');
+            return redirect()->route('login-berhasil')->with('login_success', 'Login Sukses!');
         }else {
             return redirect()->route("login")->with('Failed','Email atau Password Salah');
         }
@@ -79,5 +80,11 @@ class LoginController extends Controller
 
         
         
+    }
+
+    public function profile(){
+        $user = Auth::user();
+        $pasien = Pasien::where('user_id', $user->id)->first();
+        return view('profile', compact('user', 'pasien'));
     }
 }
