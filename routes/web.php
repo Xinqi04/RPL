@@ -30,6 +30,7 @@ Route::get('/', [HomeController::class,'laman_utama'])->name('laman-utama');
 
 
 Route::get('/login',[LoginController::class,'index'])->name('login');
+Route::get('/login-berhasil',[LoginController::class,'login_berhasil'])->name('login-berhasil');
 Route::post('/login-proses',[LoginController::class,'login_proses'])->name('login-proses');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
@@ -85,6 +86,9 @@ Route::post('/registrasi-radio-proses', [RadiologiController::class, 'registrasi
 // });
 
 Route::get('/admin',[HomeController::class,'index'])->name('index');
+Route::get('/admin-data-user',[HomeController::class,'admin_data_user'])->name('admin-data-user');
+Route::get('/admin-data-pasien',[HomeController::class,'admin_data_pasien'])->name('admin-data-pasien');
+Route::get('/admin-data-dokter',[HomeController::class,'admin_data_dokter'])->name('admin-data-dokter');
   Route::get('/laman-masuk', [HomeController::class,'laman_masuk'])->name('laman-masuk');
   Route::get('/create',[HomeController::class,'create'])->name('admin.create');
   

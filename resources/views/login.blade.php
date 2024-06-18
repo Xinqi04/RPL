@@ -89,6 +89,12 @@
             Swal.fire('{{ $message }}');
         </script>
     @endif
+
+    @if(Session::has('success'))
+    <script>
+        toastr.success('{{ Session::get('success') }}');
+    </script>
+    @endif
     
     <script>
       toastr.options.progressBar = true;
@@ -111,7 +117,7 @@
                           if (false) {
                               window.location.href = "{{ route('index') }}";
                           } else if (true) {
-                              window.location.href = "{{ route('laman-masuk') }}";
+                              window.location.href = "{{ route('login-berhasil') }}";
                           } else {
                               toastr.error('Role not recognized');
                           }
@@ -125,10 +131,6 @@
               });
           });
       });
-
-      @if (session()->has('success'))
-          toastr.success("{{ session('success') }}");
-      @endif
   </script>
 </body>
 </html>

@@ -14,6 +14,10 @@ class LoginController extends Controller
         return view('login');
     }
 
+    public function login_berhasil(){
+        return view('laman-masuk');
+    }
+
     public function login_proses(Request $request){
         $request->validate([
             'email'=> 'required',
@@ -26,7 +30,7 @@ class LoginController extends Controller
         ];
 
         if(Auth::attempt($data)){
-            return view('laman-masuk');
+            return redirect()->route('login-berhasil')->with('success', 'Login Sukses!');
         }else {
             return redirect()->route("login")->with('Failed','Email atau Password Salah');
         }
@@ -34,7 +38,7 @@ class LoginController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect()->route('laman-utama')->with('Success','kamu berhasil logout');
+        return redirect()->route('laman-utama')->with('success','kamu berhasil logout');
     }
 
     public function register(){

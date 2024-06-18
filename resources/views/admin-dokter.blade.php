@@ -19,7 +19,7 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-12">
-            <a href="{{ route('admin.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+            {{-- <a href="{{ route('admin.create') }}" class="btn btn-primary mb-3">Tambah Data</a> --}}
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title"></h3>
@@ -40,22 +40,25 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Nama</th>
-                      <th>Email</th>
-                      <th>Action</th>
+                      <th>Nama Dokter</th>
+                      <th>Jenis Kelamin</th>
+                      <th>Spesialis</th>
+                      <th>No HP</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($dataUser as $d)
+                    @foreach ($dataDokter as $d)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td>{{ $d->name }}</td>
-                          <td>{{ $d->email }}</td>
-                          <td>
+                          <td>{{ $d->nama_dokter }}</td>
+                          <td>{{ $d->jenis_kelamin }}</td>
+                          <td>{{ $d->spesialis->nama_spesialis }}</td>
+                          <td>{{ $d->no_hp }}</td>
+                          {{-- <td>
                             <a href="{{ route('admin.detail',['id' => $d->id]) }}" class="btn btn-primary"><i class="fas fa-eye"></i>Detail</a>
                             <a href="{{ route('admin.edit',['id' => $d->id]) }}" class="btn btn-primary"><i class="fas fa-pen"></i>Edit</a>
                             <a data-toggle="modal" data-target="#modal-hapus-{{ $d->id }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Hapus</a>
-                          </td>
+                          </td> --}}
                         </tr> 
 
                         <div class="modal fade" id="modal-hapus-{{ $d->id }}" tabindex="-1" aria-labelledby="modal-default-label" aria-hidden="true">

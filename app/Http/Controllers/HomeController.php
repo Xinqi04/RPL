@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
+use App\Models\Laboratorium;
+use App\Models\Pasien;
+use App\Models\Radiologi;
+use App\Models\RawatJalan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
@@ -14,8 +19,30 @@ class HomeController extends Controller
         return view('laman-utama');
     }
     public function index() {
+        $jumlahDokter = Dokter::count();
+        $jumlahPasien = Pasien::count();
+        $jumlahUser   = User::count();
+        $jumlahRawatJalan = RawatJalan::count();
+        $jumlahRadiologi = Radiologi::count();
+        $jumlahLaboratorium = Laboratorium::count();
+
+        
+        return view('admin', compact('jumlahDokter', 'jumlahPasien', 'jumlahUser', 'jumlahRawatJalan', 'jumlahRadiologi','jumlahLaboratorium'));
+    }
+
+    public function admin_data_user() {
         $dataUser = User::get();
         return view('index',compact('dataUser'));
+    }
+
+    public function admin_data_pasien() {
+        $dataPasien = Pasien::get();
+        return view('admin-pasien',compact('dataPasien'));
+    }
+
+    public function admin_data_dokter() {
+        $dataDokter = Dokter::with('spesialis')->get();
+        return view('admin-dokter',compact('dataDokter'));
     }
 
     public function create(){
