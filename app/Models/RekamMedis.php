@@ -19,6 +19,6 @@ class RekamMedis extends Model
 
     public function rawatJalan()
     {
-        return $this->belongsTo(RawatJalan::class);
+        return $this->belongsTo(RawatJalan::class,'rawat_jalans_id');
     }
 }

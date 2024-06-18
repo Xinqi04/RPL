@@ -64,7 +64,11 @@ Route::get('/registrasi-janji-rs', [JanjiRsController::class, 'index'])->name('r
 Route::post('/registrasi-janji-rs-proses', [JanjiRsController::class, 'registrasi_janji_rs_proses'])->name('registrasi-janji-rs-proses');
 
 Route::get('/registrasi-labo', [LaboratoriumController::class, 'index'])->name('registrasi-labo');
+Route::post('/registrasi-labo-proses', [LaboratoriumController::class, 'registrasi_labo_proses'])->name('registrasi-labo-proses');
+
+
 Route::get('/registrasi-radio', [RadiologiController::class, 'index'])->name('registrasi-radio');
+Route::post('/registrasi-radio-proses', [RadiologiController::class, 'registrasi_radio_proses'])->name('registrasi-radio-proses');
 
 // Route::group(['prefix'=> 'admin', 'middleware'=> ['auth'], 'as' => 'admin'], function () {
 //   Route::get('/admin',[HomeController::class,'index'])->name('index');

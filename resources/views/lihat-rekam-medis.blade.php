@@ -52,7 +52,7 @@
       </div>
       <div class="riwayat">
         <h2>Riwayat Pasien</h2>
-        @foreach($rekamMedis as $data)
+        @foreach($pasien->rekamMedis as $data)
         <div class="card">
           <div class="card-form" style="position: relative;">
             <div class="card-img">
@@ -60,7 +60,7 @@
             </div>
             <div class="card-text">
 
-              <h3>{{ \Carbon\Carbon::parse($data->tanggal_pemeriksaan)->format('d F Y') }}</h3>
+              <h3>{{ \Carbon\Carbon::parse($data->rawatJalan->tanggal_pemeriksaan)->format('d F Y') }}</h3>
                <h4>{{ $data->rawatJalan->jadwalDokter->dokter->nama_dokter }} | <span>{{ $data->rawatJalan->jadwalDokter->dokter->spesialis->nama_spesialis }}</span> </h4> 
               <p>{{ $data->diagnosa }}</p>
               {{-- <p>Rawat Jalan: {{ $data->rawatJalan->details }}</p> --}}

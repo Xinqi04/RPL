@@ -18,15 +18,7 @@ class RekamController extends Controller
 
     public function show(Request $request, $id) 
     {
-        $pasien = Pasien::find($id);
-        $rekamMedis = RekamMedis::where('pasiens_id', $id)->get(); // Mengambil semua riwayat medis pasien
-        return view('lihat-rekam-medis', compact('pasien', 'rekamMedis'));
+        $pasien = Pasien::with(['rekamMedis.rawatJalan.jadwalDokter.dokter.spesialis'])->find($id);
+        return view('lihat-rekam-medis', compact('pasien'));
     }
-
-
-    // public function detail(Request $request, $id){
-    //     $user = User::find($id);
-
-    //     return view('detail',compact('user'));
-    // }
 }

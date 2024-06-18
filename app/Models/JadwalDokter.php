@@ -21,4 +21,9 @@ class JadwalDokter extends Model
         return $this->belongsTo(Dokter::class);
     }
 
+    public function rawatJalans()
+    {
+        return $this->hasMany(RawatJalan::class, 'jadwal_dokters_id');
+    }
+
 }

@@ -22,4 +22,9 @@ class Pasien extends Model
         'image',
         'user_id'
     ];
+
+    public function rekamMedis()
+    {
+        return $this->hasMany(RekamMedis::class);
+    }
 }

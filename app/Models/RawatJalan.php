@@ -34,13 +34,8 @@ class RawatJalan extends Model
         });
     }
 
-    public function rekamMedis()
-    {
-        return $this->hasOne(RekamMedis::class, 'rawat_jalan_id');
-    }
-
     public function jadwalDokter()
     {
-        return $this->belongsTo(JadwalDokter::class);
+        return $this->belongsTo(JadwalDokter::class,'jadwal_dokters_id');
     }
 }

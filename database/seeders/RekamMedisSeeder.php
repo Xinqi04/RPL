@@ -15,10 +15,16 @@ class RekamMedisSeeder extends Seeder
      */
     public function run()
     {
+        // RekamMedis::create([
+        //     'pasiens_id' => 1,
+        //     'rawat_jalans_id' => 1,
+        //     'diagnosa' => 'Jantung Koroner'
+        // ]);
+
         RekamMedis::create([
-            'pasiens_id' => 1,
-            'rawat_jalans_id' => 1,
-            'diagnosa' => 'Jantung Koroner'
+            'pasien_id' => 1,
+            'rawat_jalans_id' => 3,
+            'diagnosa' => 'Patah Tulang'
         ]);
     }
 }
